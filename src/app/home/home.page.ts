@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UrlDataService} from "../url-data.service";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private url: UrlDataService) {}
 
+  scan() {
+
+  }
 }
