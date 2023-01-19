@@ -1,0 +1,33 @@
+<!--  <video-->
+<!--    id="video"-->
+<!--    width="220"-->
+<!--    height="220"-->
+<!--    style="border: 1px solid gray"-->
+<!--  ></video>-->
+
+  <div>
+    <div style="text-align: center; margin-top: 15%; margin-left: 10%">
+      <img src="../../assets/icon/bolt.svg" alt="Logo">
+    </div>
+    <div style="text-align: center; color: white" *ngIf="join">
+      <h4>Audio Call Request</h4>
+      <p>Trying to connect to the owner <br> of the vehicle </p>
+    </div>
+    <div style="text-align: center; color: white" *ngIf="!join && remoteCalls.length === 0">
+      <div class="loader">Connecting<span class="loader__dot">.</span><span class="loader__dot">.</span><span
+        class="loader__dot">.</span></div>
+    </div>
+    <div style="text-align: center; color: white; margin-top: 15%">
+      <span *ngIf="!join && remoteCalls.length !== 0">{{min}} : {{second}}</span>
+    </div>
+    <div style="margin-top: 55%">
+      <div *ngIf="join">
+        <ion-button (click)="voiceCall()" color="secondary" expand="block" style="height: 50px">Join</ion-button>
+      </div>
+      <div *ngIf="!join">
+        <ion-button (click)="leaveCall()" color="danger" expand="block" style="height: 50px">Leave</ion-button>
+      </div>
+    </div>
+  </div>
+
+
